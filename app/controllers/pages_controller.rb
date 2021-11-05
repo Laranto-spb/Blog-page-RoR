@@ -6,4 +6,5 @@ class PagesController < ApplicationController
   def about
     @number = 3
   end
+
 end
