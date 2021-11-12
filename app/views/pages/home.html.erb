@@ -1,4 +1,12 @@
-<h1>Hello this is home page</h1>
+<div class="container">
+  <div class="card home-card" >
 
-<%= link_to "Go to articles listing", articles_path %> |
-<%= link_to "About", about_path %>
+    <div class="card-body">
+      <h1 class="card-title text-white hero-title">ALPHA BLOG</h1>
+      <p class="card-text text-white hero-description">This is a blog made by Ruby on Rails 6 and styled with Bootstrap 5. 
+      <br> You can list, create, edit and delete articles.
+      </p>
+      <%= link_to "Go to articles", articles_path, class: "btn btn-danger" %>
+    </div>
+  </div>
+</div>

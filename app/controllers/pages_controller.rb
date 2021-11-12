@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   end
 
   def about
-    @number = 3
+    
   end
 
 end

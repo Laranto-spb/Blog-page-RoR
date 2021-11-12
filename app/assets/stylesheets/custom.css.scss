@@ -1,0 +1,21 @@
+@import 'bootstrap/dist/css/bootstrap';
+
+.home-card {
+  margin-top: 25px !important;
+  height: 500px !important;
+
+  background-image: image-url('blog-bg-2.jpg') !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center center !important;
+}
+
+.hero-title {
+  margin-bottom: 30px !important;
+}
+
+
+.hero-description {
+  max-width: 40% !important;
+  margin-bottom: 100px !important;
+}
