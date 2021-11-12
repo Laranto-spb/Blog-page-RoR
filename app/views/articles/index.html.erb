@@ -1,6 +1,9 @@
 <h1 class="text-center mt-4 mb-4">Listing of articles</h1>
 <div class="container mb-5">
     <% if @articles.any? %>
+      <div class="row justify-content-center mb-4">
+        <%= link_to "Create article", new_article_path, class: "btn btn-success col-6 col-sm-3" %>
+      </div>
       <% @articles.each do |article|  %>
         <div class="row justify-content-center">
           <div class="col-8 mb-4">
