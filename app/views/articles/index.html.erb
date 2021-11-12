@@ -2,7 +2,7 @@
 <div class="container mb-5">
     <% if @articles.any? %>
       <% @articles.each do |article|  %>
-        <div class="row justify-content-md-center">
+        <div class="row justify-content-center">
           <div class="col-8 mb-4">
             <div class="card text-center shadow mb-5 bg-body rounded">
               <div class="card-header fst-italic">
@@ -12,9 +12,9 @@
                 <h5 class="card-title"><%= link_to article.title, article_path(article.id), class: "text-success" %></h5>
                 <p class="card-text"><%=  truncate(simple_format(article.description), length: 100) %></p>
                 <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                  <%= link_to "Delete", article_path(article.id), class: "btn btn-danger", method: :delete, data: { confirm: "Are you sure?" } %>
-                  <%= link_to "Edit", edit_article_path(article.id), class: "btn btn-warning" %>
-                  <%= link_to "View", article_path(article.id), class: "btn btn-success" %>
+                    <%= link_to "Delete", article_path(article.id), class: "btn btn-danger btn-sm", method: :delete, data: { confirm: "Are you sure?" } %>
+                    <%= link_to "Edit", edit_article_path(article.id), class: "btn btn-warning btn-sm" %>
+                    <%= link_to "View", article_path(article.id), class: "btn btn-success btn-sm" %>            
                 </div>
               </div>
               <div class="card-footer text-muted">
@@ -26,10 +26,9 @@
         </div>
       <% end %>
     <% else %>
-    <div class="row justify-content-md-center">
-
+    <div class="row justify-content-center">
       <p class="text-secondary text-center">No articles yet...</p>
-      <%= link_to "Create article", new_article_path, class: "btn btn-success col-3" %>
+      <%= link_to "Create article", new_article_path, class: "btn btn-success col-6 col-sm-3" %>
     </div>
     <%end%>  
 </div>
