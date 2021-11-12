@@ -1,23 +1,36 @@
-<h1>This is list of all articles</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th colspan="3">Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @articles.each do |article|  %>
-      <tr>
-        <td><%=  article.title %></td>
-        <td><%=  article.description %></td>
-        <td><%= link_to "Show", article_path(article.id) %></td>
-        <td><%= link_to "Edit", edit_article_path(article.id) %></td>
-        <td><%= link_to "Delete", article_path(article), method: :delete, data: { confirm: "Are you sure?" } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<h1 class="text-center mt-4 mb-4">Listing of articles</h1>
+<div class="container mb-5">
+    <% if @articles.any? %>
+      <% @articles.each do |article|  %>
+        <div class="row justify-content-md-center">
+          <div class="col-8 mb-4">
+            <div class="card text-center shadow mb-5 bg-body rounded">
+              <div class="card-header fst-italic">
+                by Larisa Antokhina
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><%= link_to article.title, article_path(article.id), class: "text-success" %></h5>
+                <p class="card-text"><%=  truncate(simple_format(article.description), length: 100) %></p>
+                <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                  <%= link_to "Delete", article_path(article.id), class: "btn btn-danger", method: :delete, data: { confirm: "Are you sure?" } %>
+                  <%= link_to "Edit", edit_article_path(article.id), class: "btn btn-warning" %>
+                  <%= link_to "View", article_path(article.id), class: "btn btn-success" %>
+                </div>
+              </div>
+              <div class="card-footer text-muted">
+                <small> Created <%= time_ago_in_words(article.created_at) %> ago </small> |
+                <small> Edited <%= time_ago_in_words(article.updated_at) %> ago </small>
+              </div>
+            </div>       
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+    <div class="row justify-content-md-center">
+      <%= image_tag "nothing", class: "nothing-pic" %>
+      <p class="text-secondary text-center">No articles yet...</p>
+      <%= link_to "Create article", new_article_path, class: "btn btn-success col-3" %>
+    </div>
+    <%end%>  
+</div>
 
-<%= link_to "Create a new article", new_article_path %>

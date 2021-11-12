@@ -1,24 +1,10 @@
-# README
+Blog app made by Rails 6 and styled with Boostrap 5
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Deploy:
 
-Things you may want to cover:
+<a href="https://alpha-blog-laranto.herokuapp.com/"> https://alpha-blog-laranto.herokuapp.com/ </a>
 
-* Ruby version
+Features:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Created by Rails new
+2. CRUD operations

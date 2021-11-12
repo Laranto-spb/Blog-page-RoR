@@ -1,7 +1,15 @@
 @import 'bootstrap/dist/css/bootstrap';
 
+body {
+  min-height: 100vh !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .home-card {
   margin-top: 25px !important;
+  margin-bottom: 25px !important;
   height: 500px !important;
 
   background-image: image-url('blog-bg-2.jpg') !important;
@@ -14,8 +22,19 @@
   margin-bottom: 30px !important;
 }
 
-
 .hero-description {
   max-width: 40% !important;
   margin-bottom: 100px !important;
 }
+
+.nothing-pic {
+  width: 100px;
+
+}
+
+.footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+

@@ -1,9 +1,27 @@
-<h1>Showing article details</h1>
+<h1 class="text-center mt-4 mb-4">Article details</h1>
 
-<p><strong>Title: </strong><%= @article.title %></p>
-<p><strong>Description: </strong><%= @article.description %></p>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-8">
+      <div class="card mb-4 text-center shadow mb-5 bg-body rounded">
+        <div class="card-header fst-italic">
+          by Larisa Antokhina
+        </div>
+        <div class="card-body">
+          <h5 class="card-title text-success"><%= @article.title %></h5>
+          <p class="card-text"><%= simple_format(@article.description) %></p>
+          <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+            <%= link_to "Delete", article_path(@article), class: "btn btn-danger", method: :delete, data: { confirm: "Are you sure?" } %>
+            <%= link_to "Edit", edit_article_path(@article), class: "btn btn-warning" %>
+          </div>
+        </div>
+        <div class="card-footer text-muted">
+          <small> Created <%= time_ago_in_words(@article.created_at) %> ago </small> |
+          <small> Edited <%= time_ago_in_words(@article.updated_at) %> ago </small>
+        </div>
+      </div>
+    </div>
+    <%= link_to "Back to articles listing", articles_path, class: "mb-5 text-center" %>  
+  </div>
+</div>
 
-
-<%= link_to "Edit", edit_article_path(@article) %> |
-<%= link_to "Delete", article_path, method: :delete, data: { confirm: "Are you sure?" } %> |
-<%= link_to "Return to articles listing", articles_path %>
