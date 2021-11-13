@@ -1,4 +1,4 @@
-<footer class="footer bg-secondary">
+<footer class="footer bg-secondary <%= @about_page ? 'footer-about' : '' %> ">
   <div class="container text-center">
     <small>
       Made by <%= link_to "Laranto github", "https://github.com/Laranto-spb", class: "text-white", target: "_blank" %>

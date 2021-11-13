@@ -10,7 +10,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="<%= @about_page ? 'bg-about' : '' %> <%= @articles_page ? 'articles-bg' : '' %>">
     <%= render 'layouts/header' %>
     <%= render 'layouts/messages'%>
     <%= yield %>

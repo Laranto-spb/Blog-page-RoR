@@ -41,4 +41,21 @@ body {
   padding-bottom: 20px;
 }
 
+.footer-about {
+  opacity: 0.5;
+}
+
+.features-list {
+  max-width: 50% !important;
+}
+
+.bg-about {
+  background-image: image-url('bg-about.jpg');
+}
+
+.articles-bg {
+  background-image: image-url('bg-articles.jpg');
+  background-size: contain;
+}
+
 
