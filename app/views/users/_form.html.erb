@@ -1,0 +1,35 @@
+<div class="container">
+
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <%= render 'shared/errors', obj: @user %>
+      <%= form_with(model: @user, local: true, class: "shadow p-5  mb-5 bg-body rounded") do |form| %>
+        <div class="form-group row mb-3">
+          <%= form.label :username, class: "col-form-label" %>
+          <%= form.text_field :username, class: "form-control", placeholder: "Enter your name" %>
+        </div>
+
+        <div class="form-group row mb-3">
+          <%= form.label :email, class: "col-form-label article-descr-input"%>
+          <%= form.email_field :email, class: "form-control", placeholder: "Enter your email" %>             
+        </div>
+
+        <div class="form-group row mb-3">
+        <%= form.label :password, class: "col-form-label article-descr-input"%>
+        <%= form.password_field :password, class: "form-control", placeholder: "Enter your password" %>             
+      </div>
+
+        <div class="form-group row mb-3 justify-content-center">
+          <%= form.submit "Sign up", class: "btn btn-success col-9 col-sm-5" %>
+        </div>
+        
+
+      <% end %>
+      
+    </div>
+
+    <%= link_to "Cancel and back to articles listing", articles_path, class: "mb-5 text-center" %>    
+
+  </div>
+
+</div>
