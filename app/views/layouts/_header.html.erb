@@ -6,16 +6,17 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <%= link_to "About", about_path, class: "nav-link" %>
+        <%= link_to "Bloggers", users_path, class: "nav-link" %>
         <div class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Actions
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <%= link_to "See all articles", articles_path, class: "dropdown-item" %>
+            <%= link_to "See articles", articles_path, class: "dropdown-item" %>
             <%= link_to "Create article", new_article_path, class: "dropdown-item" %>
           </ul>
         </div>
+        <%= link_to "About", about_path, class: "nav-link" %>
       </div>
     </div>
   </div>
