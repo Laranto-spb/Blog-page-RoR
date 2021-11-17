@@ -20,14 +20,14 @@ class ApplicationController < ActionController::Base
   end
 
   def user_article
-    if current_user != @article.user
+    if  current_user != @article.user && !current_user.admin? 
       flash[:alert] = "You can edit only your own article"
       redirect_to @article
     end
   end
 
   def user_profile
-    if current_user != @user
+    if  current_user != @user && !current_user.admin?
       flash[:alert] = "You can edit only your own profile"
       redirect_to @user
     end

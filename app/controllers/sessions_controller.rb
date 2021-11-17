@@ -14,7 +14,6 @@ class SessionsController < ApplicationController
       redirect_to user_path(user.id)
 
     else
-      @error = true
       flash.now[:alert] = "Something wrong with your login details"
       render 'new'
     end
