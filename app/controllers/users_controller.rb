@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
 
   before_action :set_user, only: [:edit, :update, :show , :destroy]
+  before_action :require_user, except: [:show, :index, :new, :create]
+  before_action :user_profile, only: [:edit, :update, :destroy]
 
   def new 
     @user = User.new
@@ -41,7 +43,9 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    redirect_to users_path
+    session[:user_id] = nil
+    flash[:notice] = "Your account was successfully deleted with all your articles"
+    redirect_to articles_path
   end
 
 

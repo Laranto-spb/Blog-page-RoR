@@ -15,7 +15,9 @@
               <%= user.articles.length %> articles
             </p>
             <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                <%= link_to "Edit", edit_user_path(user.id), class: "btn btn-warning btn-sm" %>
+                <% if logged_in? && user == current_user %>
+                  <%= link_to "Edit", edit_user_path(user.id), class: "btn btn-warning btn-sm" %>
+                <% end %>
                 <%= link_to "View", user_path(user.id), class: "btn btn-success btn-sm" %>            
             </div>
           </div>
