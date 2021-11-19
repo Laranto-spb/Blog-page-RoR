@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-
+  before_action :require_admin, except: [:show, :index]
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
   def new

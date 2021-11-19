@@ -19,6 +19,13 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def require_admin
+    if !(logged_in? && current_user.admin?)
+      flash[:alert] = "Sorry, but only admins can create/edit/delete categories"
+      redirect_to categories_path
+    end
+  end
+
   def user_article
     if  current_user != @article.user && !current_user.admin? 
       flash[:alert] = "You can edit only your own article"
