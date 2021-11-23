@@ -6,5 +6,7 @@ Deploy:
 
 Features:
 
-1. Created by Rails new
-2. CRUD operations
+1. Created by Rails 6
+2. Designed with Boostrap 5
+3. CRUD operations
+4. Sing up and login for users
