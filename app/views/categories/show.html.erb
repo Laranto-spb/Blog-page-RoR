@@ -1,1 +1,22 @@
 <h1 class="text-center mt-4 mb-4"><%= @category.name %></h1>
+
+<% if logged_in? && current_user %>
+  <div class="row justify-content-center mt-4">
+      <div class="col-4 text-center">
+          <%= link_to "Edit category", edit_category_path(@category), class: "btn btn-warning btn-sm" %>
+      </div>
+  </div>
+  
+<% end %>
+
+<h3 class="text-center mt-4 mb-4">Articles:</h3>
+
+<div class="apple_pagination mb-4">
+  <%= will_paginate @articles, :container => false %>
+</div>
+
+<%= render 'articles/articles' %>
+
+<div class="apple_pagination mb-4">
+  <%= will_paginate @articles, :container => false %>
+</div>
